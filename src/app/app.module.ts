@@ -11,7 +11,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
 import {ToastrModule, ToastrService} from "ngx-toastr";
 import { BookComponent } from './components/book/book.component';
 import { BookImageComponent } from './components/book-image/book-image.component';
-import { SideFilterComponent } from './components/side-filter/side-filter.component'
+import { SideFilterComponent } from './components/side-filter/side-filter.component';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { SideFilterComponent } from './components/side-filter/side-filter.compon
     SpinnerComponent,
     BookComponent,
     BookImageComponent,
-    SideFilterComponent
+    SideFilterComponent,
+    CartSummaryComponent
   ],
   imports: [
     HttpClientModule,

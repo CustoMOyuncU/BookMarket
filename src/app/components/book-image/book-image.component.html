@@ -4,6 +4,6 @@
         <h5 class="card-title">{{book.bookName}}</h5>
         <p class="card-text">Yazar:{{book.writerName}}</p>
         <span class="card-text publisher">{{book.publisherName}}</span>
-        <div><a href="#" class="btn btn-primary mt-2 w-100">Go somewhere</a></div>
+        <div class="btn-cart"><a (click)="addToCart(book)" class="btn btn-primary mt-2 w-100">Sepete Ekle</a></div>
     </div>
 </div>

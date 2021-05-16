@@ -1,12 +1,11 @@
 <div class="container">
     <div class="row">
-        <div class="col-3">
-            <app-side-filter class="col-3"></app-side-filter>
+        <div class="col-md-3">
+            <app-side-filter class="col-md-3"></app-side-filter>
         </div>
         <div class="col-md-9">
             <div class="row">
-                <app-book-image class="col-4" style="height: 600px; margin-bottom: 70px;" [book]="book" [dataLoaded]="true" *ngFor="let book of books"></app-book-image>
-
+                <app-book-image class="col-md-4" style="height: 600px; margin-bottom: 70px;" [book]="book" [dataLoaded]="true" *ngFor="let book of books"></app-book-image>
             </div>
         </div>
     </div>

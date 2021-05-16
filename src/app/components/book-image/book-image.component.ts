@@ -3,6 +3,7 @@ import { Book } from 'src/app/models/book';
 import { BookDetail } from 'src/app/models/bookDetail';
 import { BookImage } from 'src/app/models/bookImage';
 import { BookImageService } from 'src/app/services/book-image.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-book-image',
@@ -15,7 +16,7 @@ export class BookImageComponent implements OnInit {
   bookImage: BookImage
   @Input() dataLoaded: boolean = false
 
-  constructor(private bookImageService: BookImageService) { }
+  constructor(private bookImageService: BookImageService,private cartService:CartService) { }
 
   ngOnInit(): void {
     this.getBookImage();
@@ -28,4 +29,7 @@ export class BookImageComponent implements OnInit {
     })
   }
 
+  addToCart(book:BookDetail){
+    this.cartService.addToCart(book)  
+  }
 }
