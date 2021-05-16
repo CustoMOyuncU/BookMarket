@@ -14,7 +14,7 @@ export class PublisherService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getAll(publisher:Publisher):Observable<ListResponseModel<Publisher>>{
+  getAllPublishers(publisher:Publisher):Observable<ListResponseModel<Publisher>>{
     return this.httpClient.get<ListResponseModel<Publisher>>(this.apiUrl+"getall")
   }
 

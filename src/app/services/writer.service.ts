@@ -14,7 +14,7 @@ export class WriterService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getAll(writer:Writer):Observable<ListResponseModel<Writer>>{
+  getAllWriters(writer:Writer):Observable<ListResponseModel<Writer>>{
     return this.httpClient.get<ListResponseModel<Writer>>(this.apiUrl+"getall")
   }
 

@@ -10,16 +10,16 @@ import { ResponseModel } from '../models/responseModel';
 @Injectable({
   providedIn: 'root'
 })
-export class BookServiceService {
+export class BookService {
   apiUrl= environment.baseUrl+"/books/"
 
   constructor(private httpClient:HttpClient) { }
 
-  getAllBooks(book:Book):Observable<ListResponseModel<Book>>{
+  getAllBooks():Observable<ListResponseModel<Book>>{
     return this.httpClient.get<ListResponseModel<Book>>(this.apiUrl+"getall")
   }
 
-  getAllBookDetails(bookDetail:BookDetail):Observable<ListResponseModel<BookDetail>>{
+  getAllBookDetails():Observable<ListResponseModel<BookDetail>>{
     return this.httpClient.get<ListResponseModel<BookDetail>>(this.apiUrl+"getbookdetails")
   }
   
