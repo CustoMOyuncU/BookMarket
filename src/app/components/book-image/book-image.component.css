@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+.product{
+    height: 300px !important;
+}
+
+.card-text{
+    margin-bottom: 5px !important;
+}
+
+.img-card{
+    height: 500px !important;
+}
+
+.publisher{
+    display: inline-block;
+    border:1px solid rgb(129, 245, 135);
+    border-radius: 50px;
+    width: 100px;
+    padding-left: 15px;
+    font-size: small;
+    color: rgb(66, 150, 55);
+    transition: all,0.4s;
+}
+
+.publisher:hover{
+    background-color:rgb(129, 245, 135);
+    cursor: pointer;
+    transition: all,0.4s;
+}
