@@ -1,4 +1,7 @@
 *{
     box-sizing: border-box;
-    padding: 0 0 0 0 !important;
+}
+
+.alert{
+    margin-left: 10px;
 }

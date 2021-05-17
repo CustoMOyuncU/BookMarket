@@ -14,7 +14,7 @@ export class CategoryService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getAllCategories(category:Category):Observable<ListResponseModel<Category>>{
+  getAllCategories():Observable<ListResponseModel<Category>>{
     return this.httpClient.get<ListResponseModel<Category>>(this.apiUrl+"getall")
   }
 

@@ -11,28 +11,33 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 export class BookService {
-  apiUrl= environment.baseUrl+"/books/"
+  apiUrl = environment.baseUrl + "/books/"
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  getAllBooks():Observable<ListResponseModel<Book>>{
-    return this.httpClient.get<ListResponseModel<Book>>(this.apiUrl+"getall")
+  getAllBooks(): Observable<ListResponseModel<Book>> {
+    return this.httpClient.get<ListResponseModel<Book>>(this.apiUrl + "getall")
   }
 
-  getAllBookDetails():Observable<ListResponseModel<BookDetail>>{
-    return this.httpClient.get<ListResponseModel<BookDetail>>(this.apiUrl+"getbookdetails")
-  }
-  
-  addBook(book:Book):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"add",book)
+  getAllBookDetails(): Observable<ListResponseModel<BookDetail>> {
+    return this.httpClient.get<ListResponseModel<BookDetail>>(this.apiUrl + "getbookdetails")
   }
 
-  updateBook(book:Book):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"update",book)
+  getBooksByFilter(writerId: number, publisherId: number, categoryId: number): Observable<ListResponseModel<BookDetail>> {
+    return this.httpClient.get<ListResponseModel<BookDetail>>(
+      `${this.apiUrl}getbooksbyfilter?publisherId=${publisherId}&categoryId=${categoryId}&writerId=${writerId}`)
   }
 
-  deleteBook(book:Book):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"delete",book)
+  addBook(book: Book): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "add", book)
+  }
+
+  updateBook(book: Book): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "update", book)
+  }
+
+  deleteBook(book: Book): Observable<ResponseModel> {
+    return this.httpClient.post<ResponseModel>(this.apiUrl + "delete", book)
   }
 
 }

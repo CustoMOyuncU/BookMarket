@@ -5,7 +5,17 @@
         </div>
         <div class="col-md-9">
             <div class="row">
-                <app-book-image class="col-md-4" style="height: 600px; margin-bottom: 70px;" [book]="book" [dataLoaded]="true" *ngFor="let book of books"></app-book-image>
+                <div class="mb-3">
+                    <label for="filterText" class="form-label">Kitap Ara</label>
+                    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText"
+                        placeholder="Kitap arayınız">
+                </div>
+                <div *ngIf="filterText" class="alert alert-success">
+                    {{filterText}} aradınız.
+                </div>
+                
+                <app-book-image class="col-md-4" style="height: 600px; margin-bottom: 70px;" [book]="book"
+                    [dataLoaded]="true" *ngFor="let book of books | bookFilter:filterText"></app-book-image>
             </div>
         </div>
     </div>

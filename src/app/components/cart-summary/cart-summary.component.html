@@ -4,8 +4,8 @@
         <i class="fas fa-shopping-cart"></i>
     </a>
     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a *ngFor="let cartItem of cartItems" class="dropdown-item"><span class="badge bg-secondary">{{cartItem.quantity}}</span>
-                {{cartItem.book.bookName}}<span class="badge bg-danger" style="cursor: pointer;" (click)="removeFromCart(cartItem.book)">Sil</span></a></li>
+        <li><a *ngFor="let cartItem of cartItems" class="dropdown-item"><span class="badge bg-secondary" style="margin-right: 5px;">{{cartItem.quantity}}</span>
+                {{cartItem.book.bookName}}<span class="badge bg-danger" style="cursor: pointer; display: inline-block; margin-left: 5px;" (click)="removeFromCart(cartItem.book)">Sil</span></a></li>
         <li>
             <hr class="dropdown-divider">
         </li>

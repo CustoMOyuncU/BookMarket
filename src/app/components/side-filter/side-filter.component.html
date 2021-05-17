@@ -1,23 +1,24 @@
 <form class="side-filter" style="width: 320px;">
+
     <label for="writer">Yazarlar</label>
-    <select class="form-select" id="writer" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <select class="form-select" id="writer" name="writers" aria-label="Default select example" [(ngModel)]="writerId">
+        <option value="0" selected>Hepsi</option>
+        <option [value]="writer.id" *ngFor="let writer of writers">{{writer.writerName}}</option>
     </select>
+
     <label for="publisher">Yayın Evleri</label>
-    <select class="form-select" id="publisher" aria-label="Default select example">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <select class="form-select" id="publisher" name="publishers" aria-label="Default select example"
+        [(ngModel)]="publisherId">
+        <option value="0" selected>Hepsi</option>
+        <option [value]="publisher.id" *ngFor="let publisher of publishers">{{publisher.publisherName}}</option>
     </select>
+
     <label for="category">Kategoriler</label>
-    <select class="form-select" id="category" aria-label="category">
-        <option selected>Open this select menu</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+    <select class="form-select" id="category" name="categorys" aria-label="category" [(ngModel)]="categoryId">
+        <option value="0" selected>Hepsi</option>
+        <option [value]="category.id" *ngFor="let category of categories">{{category.categoryName}}</option>
     </select>
+
+    <button id="filter-btn" class="btn btn-primary col-md-4" (click)="getFilterBtn(writerId,publisherId,categoryId)"
+        [routerLink]="setRouterLink(writerId,publisherId,categoryId)">Filter</button>
 </form>
