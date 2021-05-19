@@ -16,6 +16,9 @@ import { BookImageComponent } from './components/book-image/book-image.component
 import { SideFilterComponent } from './components/side-filter/side-filter.component';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { BookFilterPipe } from './pipes/book-filter.pipe';
+import { PaymentComponent } from './components/payment/payment.component';
+import { RegisterComponent } from './components/register/register.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { BookFilterPipe } from './pipes/book-filter.pipe';
     BookImageComponent,
     SideFilterComponent,
     CartSummaryComponent,
-    BookFilterPipe
+    BookFilterPipe,
+    PaymentComponent,
+    RegisterComponent
   ],
   imports: [
     HttpClientModule,

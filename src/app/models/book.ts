@@ -5,4 +5,5 @@ export interface Book{
     publisherId:number
     bookName:string
     writedDate:Date
+    unitPrice:number
 }

@@ -1,0 +1,39 @@
+<body class="text-center">
+
+    <main class="form-signin">
+        <form [formGroup]="creditAddForm">
+            <h1 class="h3 mb-3 fw-normal">Ödeme Bilgilerinizi Giriniz</h1>
+            <div class="row">
+
+                <div class="form-floating">
+                    <input type="number" max="16" formControlName="cardNumber" class="form-control" id="floatingInput" placeholder="0000 0000 0000 0000" required>
+                    <label for="floatingInput">Kart No</label>
+                </div>
+                <div class="form-floating mt-1" >
+                    <input type="password" class="form-control" id="floatingPassword" formControlName="password" placeholder="Password" required>
+                    <label for="floatingPassword">Password</label>
+                </div>
+                <div class="form-floating col-6 mt-1" >
+                    <input type="datetime-local" formControlName="expiryDate" class="form-control" id="month" placeholder="MM YY" required>
+                    <label for="floatingPassword">MM YY</label>
+                </div>
+
+                <div class="form-floating col-4 mt-1" style="margin-left: 5px;" >
+                    <input type="number" formControlName="cvv" class="form-control" id="cvv" placeholder="CVV" required>
+                    <label for="floatingPassword">CVV</label>
+                </div>
+
+                <div class="checkbox mb-3 mt-1">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Kredi kartını kaydet
+                    </label>
+                </div>
+                <button class="w-100 btn btn-lg btn-primary" (click)="pay()">Ödemeyi Tamamla</button>
+
+            </div>
+        </form>
+    </main>
+
+
+
+</body>

@@ -7,4 +7,5 @@ export interface BookDetail{
     writerName:string
     categoryName:string
     publisherName:string
+    unitPrice:number
 }

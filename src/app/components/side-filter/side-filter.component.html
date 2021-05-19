@@ -19,6 +19,6 @@
         <option [value]="category.id" *ngFor="let category of categories">{{category.categoryName}}</option>
     </select>
 
-    <button id="filter-btn" class="btn btn-primary col-md-4" (click)="getFilterBtn(writerId,publisherId,categoryId)"
-        [routerLink]="setRouterLink(writerId,publisherId,categoryId)">Filter</button>
+    <button id="filter-btn" class="btn btn-primary col-md-4 mt-2" (click)="getFilterBtn(writerId,publisherId,categoryId)"
+        [routerLink]="setRouterLink(writerId,publisherId,categoryId)">Filtrele</button>
 </form>

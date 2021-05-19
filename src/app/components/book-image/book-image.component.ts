@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Book } from 'src/app/models/book';
 import { BookDetail } from 'src/app/models/bookDetail';
 import { BookImage } from 'src/app/models/bookImage';
@@ -16,7 +17,11 @@ export class BookImageComponent implements OnInit {
   bookImage: BookImage
   @Input() dataLoaded: boolean = false
 
-  constructor(private bookImageService: BookImageService,private cartService:CartService) { }
+  constructor(
+    private bookImageService: BookImageService,
+    private cartService:CartService,
+    private toastrService:ToastrService
+    ) { }
 
   ngOnInit(): void {
     this.getBookImage();
@@ -30,6 +35,7 @@ export class BookImageComponent implements OnInit {
   }
 
   addToCart(book:BookDetail){
-    this.cartService.addToCart(book)  
+    this.cartService.addToCart(book)
+    this.toastrService.success(book.bookName+" sepete eklendi","Ekleme")
   }
 }
