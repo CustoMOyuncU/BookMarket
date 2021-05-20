@@ -1,20 +1,39 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#"><i class="fas fa-swatchbook" style="font-size: 32px;"></i> Book Market</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <app-cart-summary></app-cart-summary>
-        </ul>
+
+  <div class="container">
+    <a class="navbar-brand" routerLink=""><i class="fas fa-swatchbook" style="font-size: 32px;"></i> Book Market</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li>
         
-      </div>
+        <li class="nav-item" style="margin-left: 903px;"*ngIf="!authenticated">
+          <button type="button" class="btn btn-outline-info"  routerLink="/register">Kayıt Ol</button>
+        </li>
+        <li class="nav-item ml-3">
+          <button type="button" class="btn btn-primary ml-3" *ngIf="authenticated==false" routerLink="/login">Giriş Yap</button>
+        </li>
+
+        <li class="nav-item dropdown" style="margin-left: 920px;" *ngIf="authenticated">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{user.firstName}} {{user.lastName}}
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" (click)="deleteToken()" routerLink="/home">Çıkış</a></li>
+          </ul>
+
+        <app-cart-summary></app-cart-summary>
+      </ul>
+
     </div>
-  </nav>
+  </div>
+</nav>
