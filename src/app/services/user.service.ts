@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Claim } from '../models/claim';
 import { ListResponseModel } from '../models/listResponseModel';
 import { SingleResponseModel } from '../models/singleResponseModel';
 import { User } from '../models/user';
@@ -21,4 +22,5 @@ export class UserService {
   getUsers(): Observable<ListResponseModel<User>> {
     return this.httpClient.get<ListResponseModel<User>>(this.apiUrl+"getall");
   }
+
 }

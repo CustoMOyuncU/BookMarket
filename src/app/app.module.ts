@@ -19,6 +19,8 @@ import { BookFilterPipe } from './pipes/book-filter.pipe';
 import { PaymentComponent } from './components/payment/payment.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
+import { BookAddComponent } from './components/book-add/book-add.component';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 export function tokenGetter(){
@@ -37,7 +39,8 @@ export function tokenGetter(){
     BookFilterPipe,
     PaymentComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    BookAddComponent
   ],
   imports: [
     HttpClientModule,
@@ -54,7 +57,9 @@ export function tokenGetter(){
       }
     })
   ],
-  providers: [],
+  providers: [
+    {provide:HTTP_INTERCEPTORS,useClass:AuthInterceptor,multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
