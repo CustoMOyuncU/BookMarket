@@ -27,7 +27,6 @@ export class NaviComponent implements OnInit {
     if(this.authService.isAuthenticated()){
       this.userId=this.authService.getUserIdByJwt()
       this.getUser(this.userId)
-      console.log("sa")
     }else{
       this.dataLoaded=true
       console.log(this.authenticated)

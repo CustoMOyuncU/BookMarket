@@ -24,16 +24,14 @@ export class PaymentComponent implements OnInit {
 
   createCardAddForm() {
     this.creditAddForm = this.formBuilder.group({
-      cardNumber: ["", Validators.required],
-      password: ["", Validators.required],
-      cvv: ["", Validators.required],
+      cardNumber: ["", Validators.min(16),Validators.max(16)],
+      password: ["", Validators.min(4),Validators.max(16)],
+      cvv: ["", Validators.min(3),Validators.max(16)],
       expiryDate: ["", Validators.required]
     })
   }
 
   pay() {
-    console.log(this.creditAddForm.value)
-
     if (this.creditAddForm.valid) {
       let cardModule = Object.assign({}, this.creditAddForm.value)
       

@@ -6,32 +6,38 @@
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" routerLink="">Home</a>
         </li>
-        
-        <li class="nav-item" style="margin-left: 903px;"*ngIf="!authenticated">
-          <button type="button" class="btn btn-outline-info"  routerLink="/register">Kayıt Ol</button>
+
+        <li class="nav-item" *ngIf="!authenticated">
+          <button type="button" class="btn btn-outline-info" routerLink="/register">Kayıt Ol</button>
         </li>
         <li class="nav-item ml-3">
-          <button type="button" class="btn btn-primary ml-3" *ngIf="authenticated==false" routerLink="/login">Giriş Yap</button>
+          <button type="button" class="btn btn-primary ml-3" *ngIf="authenticated==false" routerLink="/login">Giriş
+            Yap</button>
         </li>
 
-        <li class="nav-item dropdown" style="margin-left: 920px;" *ngIf="authenticated">
-          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <app-cart-summary></app-cart-summary>
+
+        <li class="nav-item dropdown" *ngIf="authenticated">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
             {{user.firstName}} {{user.lastName}}
           </a>
 
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><hr class="dropdown-divider"></li>
+            <li routerLink="/book/add">Kitap ekle
+              <hr class="dropdown-divider">
+            </li>
             <li><a class="dropdown-item" (click)="deleteToken()" routerLink="/home">Çıkış</a></li>
           </ul>
 
-        <app-cart-summary></app-cart-summary>
+
       </ul>
 
     </div>

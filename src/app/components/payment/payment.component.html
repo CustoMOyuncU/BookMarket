@@ -2,6 +2,15 @@
 
     <main class="form-signin">
         <form [formGroup]="creditAddForm">
+            <img
+          class="mb-4"
+          src="../../../assets/img/InkedInkedpreview-1_4x_LI.jpg"
+          alt=""
+          width="100"
+          height="100"
+          style="cursor: pointer;"
+          routerLink=""
+        />
             <h1 class="h3 mb-3 fw-normal">Ödeme Bilgilerinizi Giriniz</h1>
             <div class="row">
 
@@ -23,12 +32,12 @@
                     <label for="floatingPassword">CVV</label>
                 </div>
 
-                <div class="checkbox mb-3 mt-1">
+                <!-- <div class="checkbox mb-3 mt-1">
                     <label>
                         <input type="checkbox" value="remember-me"> Kredi kartını kaydet
                     </label>
-                </div>
-                <button class="w-100 btn btn-lg btn-primary" (click)="pay()">Ödemeyi Tamamla</button>
+                </div> -->
+                <button class="w-100 btn btn-lg btn-primary mt-3" (click)="pay()">Ödemeyi Tamamla</button>
 
             </div>
         </form>
